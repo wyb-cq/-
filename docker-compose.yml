@@ -1,0 +1,10 @@
+services:
+  file-server:
+    build: .
+    container_name: nginx-file-server
+    ports:
+      - "18080:80"
+    volumes:
+      - ./abc:/usr/share/nginx/html
+    user: root
+    restart: unless-stopped
